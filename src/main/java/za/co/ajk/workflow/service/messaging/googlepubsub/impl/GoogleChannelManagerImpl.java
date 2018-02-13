@@ -111,7 +111,7 @@ public class GoogleChannelManagerImpl implements GoogleChannelManager {
         @Qualifier("pubsubInputChannel") MessageChannel inputChannel) {
         try {
             PubSubInboundChannelAdapter adapter =
-                new PubSubInboundChannelAdapter(pubSubTemplate, "WorkflowEngineGenericSub");
+                new PubSubInboundChannelAdapter(pubSubTemplate, "WorkflowGenericSub");
             adapter
                 .setOutputChannel(
                     inputChannel); // looks like the channel to ack on (thus the input channel - confusing!)
@@ -130,7 +130,7 @@ public class GoogleChannelManagerImpl implements GoogleChannelManager {
             MessageChannel inputChannel) {
         try {
             PubSubInboundChannelAdapter adapter =
-                new PubSubInboundChannelAdapter(pubSubTemplate, "WorkflowEngineTopicSub");
+                new PubSubInboundChannelAdapter(pubSubTemplate, "WorkflowTopicSub");
             adapter
                 .setOutputChannel(
                     inputChannel); // looks like the channel to ack on (thus the input channel - confusing!)
